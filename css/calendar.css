@@ -1,0 +1,229 @@
+/* ===================================
+0. Font Import
+==================================== */
+@font-face {
+    font-family: 'ngb';
+    src: url('../webfonts/NanumGothicBold.ttf');
+}
+
+@font-face {
+    font-family: 'ng';
+    src: url('../webfonts/NanumGothic.ttf');
+}
+
+#monthAndYear {
+    font-family: Verdana,'ngb','ng', serif;
+      text-align: center;
+  margin-top: 0;
+}
+
+.wrapper {
+    margin: 15px auto;
+    max-width: 1100px;
+}
+
+.container-calendar {
+  background: #ffffff;
+  padding: 15px;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: auto;
+
+}
+.button-container-calendar button {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #00a2b7;
+  color: #fff;
+  border: 1px solid #0aa2b5;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.table-calendar {
+  border-collapse: collapse;
+  width: 100%;
+  height: 40em;
+}
+.table-calendar span{
+    text-align:left;
+    padding: 2px;
+    font-weight:600;
+}
+.table-calendar td, .table-calendar th {
+  width:14.2%;
+  border: 1px solid #e2e2e2;
+  vertical-align: top;
+  height:16.6%;
+
+}
+    .table-calendar .event {
+        position: relative;
+        cursor: pointer;
+        font-size: 0.7em;
+        padding-left: 0.2em;
+        color: black;
+        font-family: Verdana,'ngb','ng', serif;
+        width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+        max-width: 15em;
+        overflow: hidden;
+    }
+    .table-calendar .holiday {
+        border-left: 2px solid red;
+        background-color: #eecccc;
+         border-radius: 5em;
+    }
+    .table-calendar .notice {
+        border-left: 2px solid #5AC18E;
+        background-color: #D3FFCE;
+        border-radius: 5em;
+    }
+    .table-calendar .events {
+        border-left: 2px solid blue;
+        background-color: #ccccee;
+        border-radius: 5em;
+    }
+    .table-calendar .promise {
+        border-left: 2px solid #FFFF66;
+        background-color: #F5F5DC;
+        border-radius: 5em;
+    }
+    .table-calendar .norm {
+        border-left: 2px solid #800080;
+        background-color: #E6E6FA;
+        border-radius: 5em;
+    }
+    .table-calendar .birth {
+        border-left: 2px solid #FFA500;
+        background-color: #FFD700;
+        border-radius: 5em;
+    }
+    .table-calendar .exam {
+        border-left: 2px solid #2C3E50;
+        background-color: #D6DBDF;
+        border-radius: 5em;
+    }
+
+.date-picker.selected {
+    font-weight: bold;
+    outline: 1px dashed rgba(0,188,212,0.8);
+    background-color: rgba(0,188,212,0.1);
+}
+
+    .date-picker.selected span {
+        border-bottom: none;
+        font-weight: 700;
+        border-radius: 5em;
+       
+    }
+/* »ﬁ¿œ */
+
+/* sunday */
+.date-picker:nth-child(1) {
+color: red;
+}
+
+/* ≈‰ø‰¿œ */
+.date-picker:nth-child(7) {
+color: blue;
+}
+
+
+.button-container-calendar {
+  position: relative;
+  margin-bottom: 1em;
+  overflow: hidden;
+  clear: both;
+}
+
+#previous {
+  float: left;
+}
+
+#next {
+  float: right;
+}
+
+.footer-container-calendar {
+  margin-top: 1em;
+  border-top: 1px solid #dadada;
+  padding: 10px 0;
+}
+
+.footer-container-calendar select {
+  cursor: pointer;
+  display: inline-block;
+  zoom: 1;
+  background: #ffffff;
+  color: #585858;
+  border: 1px solid #bfc5c5;
+  border-radius: 3px;
+  padding: 5px 1em;
+}
+@media screen and (max-width: 1000px) {
+    .table-calendar td .event {
+        font-size: 0.7em;
+        display: inline-block;
+        white-space: nowrap;
+        max-width: 11em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .container-calendar {
+        padding: 2px;
+        max-width: 95%;
+    }
+    .table-calendar td .event {
+        font-size: 0.7em;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 9em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+    .container-calendar {
+        padding: 2px;
+        max-width: 100%;
+    }
+
+    .table-calendar td .event {
+        font-size: 0.7em;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 7em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+@media screen and (max-width: 450px) {
+    .container-calendar {
+        padding: 2px;
+        max-width: 100%;
+    }
+
+    .table-calendar td .event {
+        font-size: 0.7em;
+        display: inline-block;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        max-width: 5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
