@@ -534,7 +534,7 @@ body {
     .Ps_card {
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         width: 99%;
-        height: 16em;
+        height: 90%;
         margin: auto;
         text-align: center;
         border-radius: 0.6em;
@@ -548,7 +548,7 @@ body {
 
         .Ps_card img {
             box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.2);
-            height: 13.5em;
+            height: 90%;
             border-radius: 0.6em 0.6em 0 0;
             transition: 0.4s;
         }
@@ -557,74 +557,33 @@ body {
             display: inline-block;
             white-space: nowrap;
             text-overflow: ellipsis;
-            max-width: 10em;
+            max-width: 8em;
             overflow: hidden;
             font-weight: bold;
             padding-top: 0.2em;
         }
 
         .Ps_card:hover {
-            width: 100%;
-            height: 16.5em;
+            transform: scale(1.05);
             cursor: pointer;
-            margin: 0em;
         }
 
-            .Ps_card:hover img {
-                height: 14em;
-            }
 
 
-    @media screen and (max-width: 1000px) {
-        .Ps_card {
-            width: 99%;
-            height: 12em;
-            font-size: 0.9em;
-        }
 
-            .Ps_card img {
-                height: 9em;
-                border-radius: 0.6em 0.6em 0 0;
-                transition: 0.4s;
-            }
 
-            .Ps_card:hover {
-                width: 100%;
-                height: 12.5em;
-                cursor: pointer;
-                margin: 0em;
-            }
-
-                .Ps_card:hover img {
-                    height: 9.5em;
-                }
-    }
 
     @media screen and (max-width: 575px) {
         .Ps_card {
-            width: 99%;
-            height: 18em;
-            margin: 1em 0em 1em 0em;
-            font-size: 0.8em;
+            width: 90%;
+
         }
-
             .Ps_card img {
-                height: 13.5em;
-                width: 99%;
-                border-radius: 0.6em 0.6em 0 0;
-                transition: 0.4s;
+                height: 95%;
+                width: 95%;
+
             }
 
-            .Ps_card:hover {
-                width: 100.5%;
-                height: 20em;
-                cursor: pointer;
-                margin: 0em;
-            }
-
-                .Ps_card:hover img {
-                    height: 15em;
-                }
     }
 
 /* ===================================

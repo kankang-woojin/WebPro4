@@ -1,23 +1,249 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <script>
-        function textstyle() {
-            document.getElementById("msg").style.color = "blue";
-            document.getElementById("msg").style.fontSize = "30px";
-            document.getElementById("msg").style.fontStyle = "italic";
-        };
-        function texthidden() {
-            document.getElementById("msg").style.visibility = "hidden";
-        };
-        function textvisible() {
-            document.getElementById("msg").style.visibility = "visible";
-        };
-    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=IE9">
+    <meta charset="utf-8">
+    <meta http-equiv="Author" content="Woojin Kang" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome5.8.2.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>KODDAS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="Icon" type="image/png" sizes="16x16" href="img/knu.png">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
-    <p id="msg">���� ��ü ��Ÿ�� �����ϱ�</p>
-    <input type="button" onclick="textstyle()" value="�ؽ�Ʈ ��Ÿ�� ����">
-    <input type="button" onclick="texthidden()" value="�ؽ�Ʈ �����">
-    <input type="button" onclick="textvisible()" value="�ؽ�Ʈ ���̱�">
+    <div id="loading_page">
+        <div id="loader"></div>	
+    </div>
+	<script>
+		$(window).on('load', function () {
+			$('#loading_page').hide();            
+		});
+        $(document).ready(function(){
+            $("#PostForm").submit(function(){
+                $('#loading_page').show();
+                }); // end submit()
+        }); // end ready()
+	</script>
+
+<div> 
+    <div id="TopPage" >
+        <div class="col-12">
+            <a data-toggle='modal' data-target='#Login_Modal' href="#" role="button" aria-expanded="false">로그인</a>
+            <a href="#">회원가입</a>          
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="Login_Modal" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="Login_ModalLabel"><b>로그인</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label>ID</label>
+                            <input type="text" class="form-control" name="userID">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="password" class="form-control" name="userPW">
+                        </div>
+                        <button type="submit" class="btn btn-success btn-sm"><i class="fas fa-sign-in-alt"></i> 로그인</button>
+                    </form>
+                    <hr />
+                    <a class="dropdown-item" href="#">회원가입하기</a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal"><i class="far fa-times-circle"></i> <b>닫기</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jsnav" id="Topnav">
+        <div class="logo">
+            <img src="img/logo.png" alt="LOGO" onclick="location.href = './'" style="cursor:pointer; height:2.2em;">
+        </div>
+        <div class="jsnavmenu">
+            <div class="jsmenu">
+                <div class="jsdown-box"></div>
+                <a href="javascript:void(0)" class="closebtn" onclick="CtrNav()">&times;</a>
+                <div class="jsdown">
+                    <button class="dropbtn">
+                        메뉴 일
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="jsdown-content" id="res-content">
+                        <a href="#">항목 1-1</a>
+                        <a href="#">항목 1-2</a>
+                        <a href="#">항목 1-3</a>
+                        <a href="#">항목 1-4</a>
+                    </div>
+                </div>
+                <div class="jsdown">
+                    <button class="dropbtn">
+                        메뉴 이
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="jsdown-content" id="res-content">
+                        <a href="#">항목 2-1</a>
+                        <a href="#">항목 2-2</a>
+                        <a href="#">항목 2-3</a>
+                        <a href="#">항목 2-4</a>
+                    </div>
+                </div>
+                <div class="jsdown">
+                    <button class="dropbtn">
+                        메뉴 삼
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="jsdown-content" id="res-content">
+                        <a href="#">항목 3-1</a>
+                        <a href="#">항목 3-2</a>
+                        <a href="#">항목 3-3</a>
+                        <a href="#">항목 3-4</a>
+                    </div>
+                </div>
+                <div class="jsdown">
+                    <button class="dropbtn">
+                        메뉴 사
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="jsdown-content" id="res-content">
+                        <a href="#">항목 4-1</a>
+                        <a href="#">항목 4-2</a>
+                        <a href="#">항목 4-3</a>
+                        <a href="#">항목 4-4</a>
+                    </div>
+                </div>
+                <div class="jsdown">
+                    <button class="dropbtn">
+                        메뉴 오
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="jsdown-content" id="res-content">
+                        <a href="#">항목 5-1</a>
+                        <a href="#">항목 5-2</a>
+                        <a href="#">항목 5-3</a>
+                        <a href="#">항목 5-4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="search">
+                <form action='./get_result.php' method='get'>
+                    <div class="input-group">
+                        <input type="text" name='search' class="form-control" placeholder="검색.." required>
+                        <button class="btn btn-sm" style='background:#152840; color:white;' type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="CtrNav()">&#9776;</a>
+
+    </div>
+</div>
+    <button type="button" id="Topbtn" class="btn btn-danger btn-sm" value="top" onclick="smooth_scroll(this.value)">↑<br>TOP</button>
+        
+        <script>
+        //menu용
+        function CtrNav() {
+            var x = document.getElementById("Topnav");
+            if (x.className === "jsnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "jsnav";
+
+            }
+        }
+        //TopButton 나타나기
+        window.onscroll = function () { Topbtn_Ctr() };
+
+        function Topbtn_Ctr() {
+            if (window.scrollY > 10) {
+                document.getElementById("Topbtn").style.visibility = "visible";
+
+            } else {
+                document.getElementById("Topbtn").style.visibility = "hidden";
+            }
+        }
+
+        //scroll 이동 부드럽게
+        function smooth_scroll(value) {
+            if ((value == 'top') || (value == '')) {
+                window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+            } else {
+                var target = document.getElementById(value);
+                var abTop = window.pageYOffset + target.getBoundingClientRect().top;
+
+                window.scrollTo({ top: abTop, left: 0, behavior: 'smooth' }, '2000');
+            }
+
+        }
+    </script>
+    <div class="hero-image" id="hero">
+        <div class="hero-text">
+            <div class="container">
+                <div class="search_container">
+                    <form action='./get_result.php' method='get'>
+                        <input type="text" name="search" placeholder="검색어를 입력하세요.." required>
+                        <button class="search_btn" type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+                <button class="Adsearch_btn">상세 검색</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="min-height:50vh;">
+        <div class="contents_title">
+            영화 리스트
+            <a href="#"><span>더보기 <i class="fas fa-chevron-right"></i></span></a>
+        </div>
+        <div class="latest_image">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="Ps_card">
+                        <img src="./img/photo/1.jpg" style="width:100%">
+                        <p>마녀</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="Ps_card">
+                        <img src="./img/photo/2.jpg" style="width:100%">
+                        <p>레옹</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="Ps_card">
+                        <img src="./img/photo/3.jpg" style="width:100%">
+                        <p>죠스</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-12">
+                    <div class="Ps_card">
+                        <img src="./img/photo/4.jpg" style="width:100%">
+                        <p>더 랍스터</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+    <div class="footer">
+        <p>© 영화사이트. All right reserved Designed by 영화사이트</p>
+    </div>
+    
 </body>
 </html>
